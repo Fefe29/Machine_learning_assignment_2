@@ -7,6 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 
 # Load data
+
 def load_data(data_dir):
     train_df = pd.read_csv(f"{data_dir}/train.csv")
     test_df = pd.read_csv(f"{data_dir}/test.csv")
