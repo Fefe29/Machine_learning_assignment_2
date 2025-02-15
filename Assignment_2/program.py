@@ -103,7 +103,7 @@ def predictCompressiveStrength(Xtest, data_dir):
 
 
 # Main execution
-data_dir = "Data"  # Change this to the correct dataset path
+data_dir = "Assignment_2/Data"  # Change this to the correct dataset path
 train_df, test_df = load_data(data_dir)
 X_train, X_val, X_test, y_train, y_val, y_test = split_data(train_df)
 train_evaluate_linear_regression(X_train, X_val, X_test, y_train, y_val, y_test)
