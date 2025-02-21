@@ -24,8 +24,10 @@ def split_data(train_df):
 
 # Compute performance metrics
 def calculate_metrics(y_true, y_pred, dataset_name):
-    mse = mean_squared_error(y_true, y_pred)
-    rse = np.sqrt(mse)
+    n=len(y_true)
+    mse = mean_squared_error(y_true, y_pred) 
+    rss = np.sum((y_true - y_pred)**2)
+    rse = np.sqrt((1/(n-2))*rss) # bizarre le 1/n-2
     r2 = r2_score(y_true, y_pred)
     print(f"{dataset_name} - RSE: {rse:.4f}, R²: {r2:.4f}")
     return rse, r2
@@ -129,33 +131,34 @@ def train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_te
     plt.show()
 
 # Main execution
-data_dir = "Data"  # Update with the correct path
-train_df, test_df = load_data(data_dir)
-X_train, X_val, X_test, y_train, y_val, y_test = split_data(train_df)
-print("----------------------------------------------------")
+if __name__ == "__main__":
+    data_dir = "Data"  # Update with the correct path
+    train_df, test_df = load_data(data_dir)
+    X_train, X_val, X_test, y_train, y_val, y_test = split_data(train_df)
+    print("----------------------------------------------------")
 
-print("Question 1: Run Ordinary Least Squares (OLS) evaluation")
-# Question 1: Train OLS using validation approach
-print("\n--- Train OLS using validation approach ---")
-ols_model, val_results = train_evaluate_linear_regression(X_train, X_val, X_test, y_train, y_val, y_test)
+    print("Question 1: Run Ordinary Least Squares (OLS) evaluation")
+    # Question 1: Train OLS using validation approach
+    print("\n--- Train OLS using validation approach ---")
+    ols_model, val_results = train_evaluate_linear_regression(X_train, X_val, X_test, y_train, y_val, y_test)
 
-# Question 1: Train OLS using cross-validation
-print("\n--- Train OLS using cross-validation ---")
-X_full_train = train_df.iloc[:, :-1]
-y_full_train = train_df.iloc[:, -1]
-cv_rse, cv_r2 = cross_validate_ols(X_full_train, y_full_train, k=5)
+    # Question 1: Train OLS using cross-validation
+    print("\n--- Train OLS using cross-validation ---")
+    X_full_train = train_df.iloc[:, :-1]
+    y_full_train = train_df.iloc[:, -1]
+    cv_rse, cv_r2 = cross_validate_ols(X_full_train, y_full_train, k=5)
 
-# Compare Validation vs. Cross-Validation Results
-print("\n--- Comparison of Validation and Cross-Validation Approaches ---")
-print(f"Validation Test RSE: {val_results[2]:.4f}, CV RSE: {cv_rse:.4f}")
-print(f"Validation Test R²: {val_results[3]:.4f}, CV R²: {cv_r2:.4f}")
+    # Compare Validation vs. Cross-Validation Results
+    print("\n--- Comparison of Validation and Cross-Validation Approaches ---")
+    print(f"Validation Test RSE: {val_results[2]:.4f}, CV RSE: {cv_rse:.4f}")
+    print(f"Validation Test R²: {val_results[3]:.4f}, CV R²: {cv_r2:.4f}")
 
-print("----------------------------------------------------")
-# Question 2: Run Ridge evaluation
-print("Question 2: Run Ridge evaluation")
-train_evaluate_ridge_regression(X_train, X_val, X_test, y_train, y_val, y_test)
-print("----------------------------------------------------")
-# Question 3: Run Lasso evaluation
-print("Question 3: Run Lasso evaluation")
-train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_test)
-print("----------------------------------------------------")
+    print("----------------------------------------------------")
+    # Question 2: Run Ridge evaluation
+    print("Question 2: Run Ridge evaluation")
+    train_evaluate_ridge_regression(X_train, X_val, X_test, y_train, y_val, y_test)
+    print("----------------------------------------------------")
+    # Question 3: Run Lasso evaluation
+    print("Question 3: Run Lasso evaluation")
+    train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_test)
+    print("----------------------------------------------------")
