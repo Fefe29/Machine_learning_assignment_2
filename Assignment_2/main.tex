@@ -29,8 +29,9 @@ In this approach, the dataset is divided into three parts: training, validation,
 The performance of the model is evaluated as follows:
 
 \[
-RSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
+RSE = \sqrt{\frac{1}{n-2}\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
 \]
+
 
 where \(y_i\) is the actual value and \(\hat{y}_i\) is the predicted value. The R\(^2\) score is calculated as:
 
