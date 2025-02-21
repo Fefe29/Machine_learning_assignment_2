@@ -132,6 +132,7 @@ def train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_te
 data_dir = "Data"  # Update with the correct path
 train_df, test_df = load_data(data_dir)
 X_train, X_val, X_test, y_train, y_val, y_test = split_data(train_df)
+print("----------------------------------------------------")
 
 print("Question 1: Run Ordinary Least Squares (OLS) evaluation")
 # Question 1: Train OLS using validation approach
@@ -148,6 +149,7 @@ cv_rse, cv_r2 = cross_validate_ols(X_full_train, y_full_train, k=5)
 print("\n--- Comparison of Validation and Cross-Validation Approaches ---")
 print(f"Validation Test RSE: {val_results[2]:.4f}, CV RSE: {cv_rse:.4f}")
 print(f"Validation Test R²: {val_results[3]:.4f}, CV R²: {cv_r2:.4f}")
+
 print("----------------------------------------------------")
 # Question 2: Run Ridge evaluation
 print("Question 2: Run Ridge evaluation")
