@@ -98,6 +98,7 @@ def train_evaluate_ridge_regression(X_train, X_val, X_test, y_train, y_val, y_te
     plt.xlabel('Alpha')
     plt.ylabel('R^2 Score')
     plt.title('Ridge Regression Performance')
+    plt.savefig("Report/Results/Q2/ridge.png")
     plt.show()
 
 # QUESTION 3: Train and Evaluate Lasso Regression with Hyperparameter Tuning
@@ -128,6 +129,7 @@ def train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_te
     plt.xlabel('Alpha')
     plt.ylabel('R^2 Score')
     plt.title('Lasso Regression Performance')
+    plt.savefig("Report/Results/Q3/lasso.png")
     plt.show()
 
 # Main execution
@@ -162,3 +164,4 @@ if __name__ == "__main__":
     print("Question 3: Run Lasso evaluation")
     train_evaluate_lasso_regression(X_train, X_val, X_test, y_train, y_val, y_test)
     print("----------------------------------------------------")
+    # Question 4: Best model
