@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1740170028 "/home/fefe/home/canada/Machine_learning/Machine_learning_assignment_2/Assignment_2/Report/report.tex" "report.pdf" "report" 1740170029
+["pdflatex"] 1740170478 "/home/fefe/home/canada/Machine_learning/Machine_learning_assignment_2/Assignment_2/Report/report.tex" "report.pdf" "report" 1740170479
   "/etc/texmf/web2c/texmf.cnf" 1730730097 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/fefe/home/canada/Machine_learning/Machine_learning_assignment_2/Assignment_2/Report/report.tex" 1740170026 8705 ebdf1e060ebbb934d376b639b1478a0a ""
+  "/home/fefe/home/canada/Machine_learning/Machine_learning_assignment_2/Assignment_2/Report/report.tex" 1740170093 8708 e7fc32483f91c25fed9469baa90ce4ca ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -89,9 +89,9 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1739640885 2799585 b8f62fc53c30d139efaba110f0781861 ""
   "Results/Q2/ridge.png" 1740169507 22526 dc23b669ffc2ff1ec720056b97471bc3 ""
   "Results/Q3/lasso.png" 1740169512 19932 deff09c74fecc30294c5c8d486302957 ""
-  "report.aux" 1740170029 1435 d9c39c712bfc5d3490f891a9f5635d1e "pdflatex"
-  "report.out" 1740170028 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "report.tex" 1740170026 8705 ebdf1e060ebbb934d376b639b1478a0a ""
+  "report.aux" 1740170479 1435 d9c39c712bfc5d3490f891a9f5635d1e "pdflatex"
+  "report.out" 1740170479 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "report.tex" 1740170093 8708 e7fc32483f91c25fed9469baa90ce4ca ""
   (generated)
   "report.aux"
   "report.log"
